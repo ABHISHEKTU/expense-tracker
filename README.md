@@ -1,76 +1,193 @@
 # Expense Tracker
 
-Personal expense tracker web app built for the Riafy Software Engineer Practical Test.
+A full-stack Expense Tracker web application built using FastAPI, React, and SQLite.
 
-## How to Run
+This application allows users to manage personal expenses, filter records, view monthly summaries, and analyze spending categories through a simple and intuitive interface.
+
+---
+
+## Features
+
+### Expense Management
+- Add new expenses
+- Edit existing expenses
+- Delete expenses with confirmation
+- View all expenses sorted by date
+
+### Filtering & Search
+- Filter by category
+- Filter by date range
+- Search expenses by title
+
+### Analytics
+- Monthly expense summary
+- Category-wise expense breakdown
+- Visual bar chart representation
+
+### Validation & Error Handling
+- Required field validation
+- Positive amount validation
+- Invalid category prevention
+- Backend connection error handling
+- Empty state handling
+
+---
+
+## Tech Stack
+
+### Frontend
+- React
+- Vite
+- JavaScript
+- CSS
+
+### Backend
+- FastAPI
+- SQLAlchemy
+- SQLite
+- Pydantic
+
+---
+
+## Project Structure
+
+```text
+expense-tracker/
+│
+├── backend/
+│   ├── main.py
+│   ├── models.py
+│   ├── database.py
+│   └── requirements.txt
+│
+├── frontend/
+│   ├── src/
+│   ├── public/
+│   └── package.json
+│
+└── README.md
+```
+
+---
+
+## Getting Started
 
 ### Prerequisites
+
 - Python 3.10+
 - Node.js 18+
+- npm
 
-### Backend (FastAPI + SQLite)
+---
+
+## Backend Setup
 
 ```bash
 cd backend
+
 pip install -r requirements.txt
+
 uvicorn main:app --reload
 ```
 
-Backend runs at http://localhost:8000  
-API docs at http://localhost:8000/docs
+Backend Server:
 
-### Frontend (React + Vite)
+```text
+http://localhost:8000
+```
+
+Swagger API Docs:
+
+```text
+http://localhost:8000/docs
+```
+
+---
+
+## Frontend Setup
 
 ```bash
 cd frontend
+
 npm install
+
 npm run dev
 ```
 
-Frontend runs at http://localhost:5173
+Frontend URL:
 
-Open http://localhost:5173 in your browser.
-
----
-
-## Stack & Tradeoffs
-
-| Layer | Choice | Why |
-|-------|--------|-----|
-| Backend | FastAPI (Python) | Fast to build, auto docs, great pydantic validation |
-| Database | SQLite via SQLAlchemy | Zero setup, single file, sufficient for local use |
-| Frontend | React + Vite | Fast HMR, component model fits CRUD UI well |
-| Styling | Inline styles | No CSS file juggling, scoped by component |
-
-**SQLite over Postgres:** No deployment required per spec; SQLite is zero-config and the file (`expenses.db`) is auto-created on first run.
-
-**No auth:** Spec explicitly says not required.
-
-**Inline styles over Tailwind/CSS modules:** Reduces setup time, keeps components self-contained.
+```text
+http://localhost:5173
+```
 
 ---
 
-## Features Done
+## API Endpoints
 
-- [x] Add expense (title, amount, category, date defaults to today, optional note)
-- [x] List all expenses sorted by date descending
-- [x] Edit any expense (inline form swap)
-- [x] Delete any expense (with confirmation)
-- [x] Monthly summary: total + category breakdown with bar chart
-- [x] Filter by category, date range (from/to), title (partial match)
-- [x] Input validation (empty title, non-positive amount, invalid category)
-- [x] Empty state handling
-- [x] Error state if backend is down
+| Method | Endpoint | Description |
+|----------|----------|-------------|
+| GET | /expenses | Get all expenses |
+| POST | /expenses | Create expense |
+| PUT | /expenses/{id} | Update expense |
+| DELETE | /expenses/{id} | Delete expense |
+| GET | /summary | Monthly summary |
 
-## Features Skipped
+---
 
-- Pagination (not needed for local/personal use)
+## Screenshots
+
+Add screenshots here:
+
+### Dashboard
+
+![Dashboard](screenshots/dashboard.png)
+
+### Summary View
+
+![Summary](screenshots/summary.png)
+
+---
+
+## Design Decisions
+
+### Why FastAPI?
+- Fast development
+- Automatic API documentation
+- Strong validation through Pydantic
+
+### Why SQLite?
+- Zero configuration
+- Lightweight
+- Suitable for personal expense tracking
+
+### Why React + Vite?
+- Fast development experience
+- Component-based architecture
+- Instant Hot Module Reloading
+
+---
+
+## Future Improvements
+
+- User authentication
 - Dark mode
-- Tests
-- Deployment
+- Responsive mobile layout
+- Export expenses to CSV/PDF
+- Pagination
+- Unit and integration tests
+- Cloud deployment
 
-## Known Rough Edges
+---
 
-- No mobile responsive layout (grid stays 2-col on narrow screens)
-- Summary refreshes only when add/edit/delete happens, not on filter change
-- SQLite concurrent write limit (not relevant for single-user local use)
+## Author
+
+Abhishek T U
+
+GitHub:
+https://github.com/ABHISHEKTU
+
+---
+
+## License
+
+This project is for educational and assessment purposes.
