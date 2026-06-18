@@ -132,21 +132,7 @@ http://localhost:5173
 | DELETE | /expenses/{id} | Delete expense |
 | GET | /summary | Monthly summary |
 
----
 
-## Screenshots
-
-Add screenshots here:
-
-### Dashboard
-
-![Dashboard](screenshots/dashboard.png)
-
-### Summary View
-
-![Summary](screenshots/summary.png)
-
----
 
 ## Design Decisions
 
