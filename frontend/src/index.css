@@ -1,0 +1,17 @@
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
+body { font-family: 'Inter', -apple-system, sans-serif; background: #0f1117; color: #e2e8f0; min-height: 100vh; }
+button { cursor: pointer; font-family: inherit; }
+input, select, textarea { font-family: inherit; }
+.container { max-width: 1200px; margin: 0 auto; padding: 0 1.5rem; }
+@keyframes spin { to { transform: rotate(360deg); } }
+@keyframes slideUp { from { opacity:0; transform:translateY(12px); } to { opacity:1; transform:translateY(0); } }
+@keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
+@media (max-width: 900px) { .layout-grid { grid-template-columns: 1fr !important; } .sticky-col { position: static !important; } }
+@media (max-width: 600px) { .form-grid { grid-template-columns: 1fr !important; } }
+input:focus, select:focus, textarea:focus { outline: none; border-color: #a78bfa !important; box-shadow: 0 0 0 3px rgba(167,139,250,0.15); }
+button:focus-visible { outline: 2px solid #a78bfa; outline-offset: 2px; }
+.card-hover { transition: transform 0.15s, box-shadow 0.15s; }
+.card-hover:hover { transform: translateY(-1px); box-shadow: 0 8px 24px rgba(0,0,0,0.4) !important; }
+.btn-ghost { transition: background 0.12s; }
+.btn-ghost:hover { background: rgba(255,255,255,0.08) !important; }
